@@ -1,0 +1,203 @@
+header:
+  name: Mihir Chaturvedi
+  title: Frontend and Web Engineer
+  logo:
+    path: /logos/mihir.svg
+    alt: "Mihir's logo"
+
+navigation:
+  - name: website
+    alias: mihir.ch
+    link: https://mihir.ch
+
+  - name: mail
+    alias: plibither8@gmail.com
+    link: mailto:plibither8@gmail.com
+
+  - name: GitHub
+    alias: "@plibither8"
+    link: https://github.com/plibither8
+
+  - name: LinkedIn
+    alias: "@plibither8"
+    link: https://www.linkedin.com/in/plibither8
+
+education:
+  - name: Indraprastha Institute of Information Technology, Delhi
+    link: https://iiitd.ac.in
+    logo: /logos/iiitd.svg
+    dates:
+      start: July 2019
+      end: Present (exp. 2023)
+    degree: Bachelor of Technology — Computer Science and Engineering
+    score: "GPA: 8.97/10"
+
+experience:
+  - name: Sourcegraph
+    branding:
+      logo: /logos/sourcegraph.svg
+      color: "#A112FF"
+    link: https://about.sourcegraph.com
+    links:
+      - name: website
+        link: https://about.sourcegraph.com
+    dates:
+      start: May 2022
+      end: August 2022 (ongoing)
+    role: Engineering Intern – Frontend Platform
+    location: Remote · New Delhi
+    description:
+      - Contributed to 5+ accessibility improvements throughout the webapp and core components used by other clients.
+      - Improved maintainability and speed of the **Repository Contributors page** by replacing dependence on RxJS with direct calls to the GraphQL API using Apollo Client.
+      - Worked on improving observability and monitoring across the webapp by through better Sentry integrations.
+
+  - name: Pabio (YC S21)
+    branding:
+      logo: /logos/pabio.svg
+      color: "#FF6B6B"
+    link: https://pabio.com
+    links:
+      - name: website
+        link: https://pabio.com
+      - name: ycombinator
+        link: https://www.ycombinator.com/companies/pabio
+    dates:
+      start: March 2021
+      end: April 2022
+    role: JavaScript Engineer Intern
+    location: Remote · New Delhi
+    description:
+      - Built and maintained the user-facing website and internal platform using **NextJS and TypeScript**.
+      - Created API endpoints in **NestJS** to add new functionalities.
+      - Created a **monorepo using Rush**, integrating all the packages and auto-generated documentation.
+      - Built CI pipelines and helped in architecting and managing services running on **AWS and GCP**.
+
+  - name: Devfolio
+    branding:
+      logo: /logos/devfolio.svg
+      color: "#3770FF"
+    link: https://devfolio.co
+    links:
+      - name: website
+        link: https://devfolio.co
+    dates:
+      start: December 2020
+      end: March 2021
+    role: Frontend Engineer Intern
+    location: Remote · New Delhi
+    description:
+      - Created **50+ unit tests** using **Jest and React Testing Library** to test user flows and components.
+      - Worked on the internal design library to create **reusable components using React**.
+      - Fixed bugs for the main Devfolio platform and the landing, submissions, projects and profile pages.
+
+  - name: Freelancer
+    branding:
+      logo: /logos/mihir.svg
+      color: "#5A8EC5"
+    link: https://mihir.ch
+    links:
+      - name: personal website
+        link: https://mihir.ch
+    dates:
+      start: June 2019
+      end: March 2021
+    role: Web and extension development
+    location: Remote · New Delhi
+    description:
+      - Worked remotely with **5+ international clients** to build websites, browser extensions and webapps.
+      - Integrated the "Markdown New Tab" browser extension into the [Orion Browser](https://browser.kagi.com/), **used by 1,000+ users**.
+
+projects:
+  - name: Slash
+    subtitle: Online "Cryptic Hunt" platform
+    link: https://github.com/IEEE-IIIT-Delhi/slash-platform
+    links:
+      - name: GitHub
+        link: https://github.com/IEEE-IIIT-Delhi/slash-platform
+    description:
+      - Designed and architectured ground-up from scratch using **Node.js, Svelte and Sapper**.
+      - Stood strong for the 36 hours (duration of the event) handling more than **200,000 requests** and **15,000 users**, and a **DDoS attack**.
+
+  - name: Refined Hacker News
+    subtitle: Browser extension
+    link: https://github.com/plibither8/refined-hacker-news
+    links:
+      - name: GitHub
+        link: https://github.com/plibither8/refined-hacker-news
+      - name: Chrome Webstore
+        link: https://chrome.google.com/webstore/detail/gcibdgjaladjjloeocimnijdgopejkfk
+      - name: Mozilla Add-Ons
+        link: https://addons.mozilla.org/en-US/firefox/addon/refined-hacker-news/
+    description:
+      - Built a browser extension to **improve the Hacker News experience**, adding 30+ features and improvements.
+      - More than **2,000 users**, and **600+ GitHub stars**.
+      - Bundled using **Webpack and Babel**, published to the Chrome Webstore and Mozilla Addons.
+
+  - name: Markdown New Tab
+    subtitle: Browser extension
+    link: https://github.com/plibither8/markdown-new-tab
+    links:
+      - name: GitHub
+        link: https://github.com/plibither8/markdown-new-tab
+      - name: Chrome Webstore
+        link: https://chrome.google.com/webstore/detail/demppioeofcekpjcnlkmdjbabifjnokj
+      - name: Mozilla Add-Ons
+        link: https://addons.mozilla.org/en-US/firefox/addon/markdown-new-tab/
+    description:
+      - Built a browser extension to add ability to take notes directly in the New Tab page, in Markdown format.
+      - More than **3,000 users**, and **750+ GitHub stars**, and published to the Chrome Webstore and Mozilla Addons.
+
+  - name: BookBroker
+    subtitle: Telegram Bot
+    link: https://github.com/plibither8/bookbroker
+    links:
+      - name: GitHub
+        link: https://github.com/plibither8/bookbroker
+      - name: Telegram Chat
+        link: https://t.me/bookbrokerbot
+    description:
+      - Built a Telegram bot to send books and documents directly to your Kindle.
+      - Integrated APIs from Telegram, Sendgrid, Razorpay and Calibre; developed using TypeScript and self-hosted.
+
+highlights:
+  - "[**Grand Prize Winner** at InOut 6](https://devfolio.co/blog/inout6-recap/#grand-prize), India's largest community-organized hackathon."
+  - "**Dean's List Award** for Academic Excellence 2021."
+  - "**3,500+ GitHub stars** on 5 projects (combined)."
+  - "[2048.cpp](https://github.com/plibither8/2048.cpp) featured by GitHub on [Twitter](https://twitter.com/github/status/1017094930991370240) and [Facebook](https://www.facebook.com/GitHub/videos/1433491453419807/)."
+
+skills:
+  - type: Languages
+    items:
+      - TypeScript
+      - JavaScript
+      - HTML/CSS
+      - Python
+      - Bash
+  - type: Frameworks and Technologies
+    items:
+      - React
+      - Svelte(Kit)
+      - NextJS
+      - Tailwind CSS
+      - Prisma
+      - NestJS
+      - Docker
+      - Nginx
+      - Caddy
+  - type: Tools
+    items:
+      - Figma
+      - Git
+      - Framer
+  - type: Platforms
+    items:
+      - Linux
+      - AWS
+      - GCP
+      - DigitalOcean
+
+footer:
+  lastUpdated: July 2022
+  viewOn:
+    link: https://mhr.cx/resume
+    slug: mhr.cx/resume
