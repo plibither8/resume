@@ -7,7 +7,7 @@
 </script>
 
 <Section heading="Projects" class="space-y-5">
-  <div class="grid grid-cols-2 gap-y-5 gap-x-10">
+  <div class="grid grid-cols-2 gap-y-5 gap-x-7">
     {#each projects as { name, subtitle, link, links, description }}
       <article class="space-y-2">
         <header class="space-y-1">

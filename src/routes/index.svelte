@@ -15,7 +15,6 @@
   import Highlights from "$lib/components/Highlights.svelte";
   import Education from "$lib/components/Education.svelte";
   import Experience from "$lib/components/Experience.svelte";
-  import Footer from "$lib/components/Footer.svelte";
   import Header from "$lib/components/Header.svelte";
   import Navigation from "$lib/components/Navigation.svelte";
   import Projects from "$lib/components/Projects.svelte";
@@ -28,18 +27,18 @@
 </script>
 
 <svelte:head>
-  <title>{$resume.header.name}'s Resume</title>
+  <title>{$resume.meta.title}'s Resume</title>
 </svelte:head>
 
 <main
   style="width: {width}px; aspect-ratio: {ratio};"
-  class="overflow-hidden mx-auto shadow-md rounded-lg flex flex-col"
+  class="overflow-hidden mx-auto my-10 shadow-md rounded-lg"
 >
   <Header />
 
   <Navigation />
 
-  <div class="p-5 space-y-5 flex-1">
+  <div class="p-7 space-y-7">
     <Education />
 
     <Experience />
@@ -52,14 +51,12 @@
       <Skills />
     </div>
   </div>
-
-  <Footer />
 </main>
 
 <style lang="postcss">
   @media print {
     main {
-      @apply mx-0 shadow-none rounded-none;
+      @apply my-0 shadow-none rounded-none;
     }
   }
 </style>

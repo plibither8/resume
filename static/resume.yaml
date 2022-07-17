@@ -1,3 +1,10 @@
+meta:
+  title: Mihir Chaturvedi's Resume
+  lastUpdated: July 2022
+  viewOn:
+    link: https://mhr.cx/resume
+    slug: mhr.cx/resume
+
 header:
   name: Mihir Chaturvedi
   title: Frontend and Web Engineer
@@ -41,6 +48,8 @@ experience:
     links:
       - name: website
         link: https://about.sourcegraph.com
+      - name: contributions on github
+        link: https://example.com
     dates:
       start: May 2022
       end: August 2022 (ongoing)
@@ -195,9 +204,3 @@ skills:
       - AWS
       - GCP
       - DigitalOcean
-
-footer:
-  lastUpdated: July 2022
-  viewOn:
-    link: https://mhr.cx/resume
-    slug: mhr.cx/resume

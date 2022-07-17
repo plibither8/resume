@@ -1,3 +1,12 @@
+interface Meta {
+  title: string;
+  lastUpdated: string;
+  viewOn: {
+    link: string;
+    slug: string;
+  };
+}
+
 interface Dates {
   start: string;
   end: string;
@@ -53,15 +62,8 @@ interface Skill {
   items: string[];
 }
 
-interface Footer {
-  lastUpdated: string;
-  viewOn: {
-    link: string;
-    slug: string;
-  };
-}
-
 interface Resume {
+  meta: Meta;
   header: Header;
   navigation: Navigation[];
   education: Education[];
@@ -69,5 +71,4 @@ interface Resume {
   projects: Project[];
   highlights: Highlight[];
   skills: Skill[];
-  footer: Footer;
 }

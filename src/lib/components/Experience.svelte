@@ -10,13 +10,13 @@
 <Section heading="Experience" class="space-y-5">
   {#each experience as { name, branding, link, links, dates, role, location, description }}
     <article class="flex gap-3">
-      <div class="flex flex-col items-center gap-5">
+      <aside class="flex flex-col items-center gap-5">
         <Logo {name} logo={branding.logo} {link} />
         <div
           class="w-1 h-full rounded-md opacity-20"
           style="background: {branding.color}"
         />
-      </div>
+      </aside>
 
       <div class="flex-1 space-y-2">
         <!-- Name and dates -->
@@ -26,15 +26,8 @@
               <h3 class="text-sm font-bold text-slate-700">
                 <Link href={link}>{name}</Link>
               </h3>
-              <p class="space-x-1 text-xs text-slate-500">
-                {#each links as item, index}
-                  <Link href={item.link} class="underline">
-                    {item.name}
-                  </Link>
-                  {#if index !== links.length - 1}
-                    <span>&middot;</span>&nbsp;
-                  {/if}
-                {/each}
+              <p class="text-sm text-slate-500">
+                {role}
               </p>
             </div>
             <span class="text-sm text-slate-500">
@@ -44,8 +37,15 @@
 
           <!-- Role and location -->
           <div class="flex items-baseline justify-between">
-            <p class="text-sm text-slate-500">
-              {role}
+            <p class="space-x-1 text-xs text-slate-500">
+              {#each links as item, index}
+                <Link href={item.link} class="underline">
+                  {item.name}
+                </Link>
+                {#if index !== links.length - 1}
+                  <span>&middot;</span>&nbsp;
+                {/if}
+              {/each}
             </p>
             <span class="text-xs text-slate-500"> {location} </span>
           </div>
