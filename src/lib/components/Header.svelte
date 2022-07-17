@@ -15,12 +15,17 @@
     </div>
   </div>
   <aside class="text-xs space-y-1 bg-slate-50 text-slate-400">
-    <p>Last updated: {meta.lastUpdated}</p>
-    <p>
+    <p>Last updated: <strong>{meta.lastUpdated}</strong></p>
+    <p class="text-right">
       View on:
-      <Link href={meta.viewOn.link} class="underline">
-        {meta.viewOn.slug}
-      </Link>
+      {#each meta.viewOn as { name, link }, index}
+        <Link href={link} class="underline">
+          {name}
+        </Link>
+        {#if index !== meta.viewOn.length - 1}
+          <span>&middot;</span>&nbsp;
+        {/if}
+      {/each}
     </p>
   </aside>
 </header>

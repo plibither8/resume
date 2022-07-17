@@ -1,12 +1,3 @@
-interface Meta {
-  title: string;
-  lastUpdated: string;
-  viewOn: {
-    link: string;
-    slug: string;
-  };
-}
-
 interface Dates {
   start: string;
   end: string;
@@ -15,6 +6,12 @@ interface Dates {
 interface Link {
   name: string;
   link: string;
+}
+
+interface Meta {
+  title: string;
+  lastUpdated: string;
+  viewOn: Link[];
 }
 
 interface Header {
