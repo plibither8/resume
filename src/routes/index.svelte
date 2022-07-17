@@ -27,7 +27,7 @@
 </script>
 
 <svelte:head>
-  <title>{$resume.meta.title}'s Resume</title>
+  <title>{$resume.meta.title}</title>
 </svelte:head>
 
 <main
