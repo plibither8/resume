@@ -32,7 +32,7 @@
 
 <main
   style="width: {width}px; aspect-ratio: {ratio};"
-  class="overflow-hidden mx-auto my-10 shadow-md rounded-lg"
+  class="overflow-hidden mx-auto rounded-lg bg-white"
 >
   <Header />
 
