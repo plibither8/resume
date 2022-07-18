@@ -50,8 +50,8 @@ experience:
     links:
       - name: website
         link: https://about.sourcegraph.com
-      - name: contributions on github
-        link: https://example.com
+      - name: contributions
+        link: https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/sourcegraph+author:plibither8+type:commit
     dates:
       start: May 2022
       end: August 2022 (ongoing)
