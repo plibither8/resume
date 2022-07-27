@@ -51,7 +51,7 @@ experience:
       - name: website
         link: https://about.sourcegraph.com
       - name: contributions
-        link: https://sourcegraph.com/search?q=context:global+repo:%5Egithub%5C.com/sourcegraph/sourcegraph%24%40*refs/heads/*+author:plibither8+type:commit
+        link: https://sourcegraph.com/search?q=context:global+repo:%5Egithub%5C.com/sourcegraph/*%40*refs/heads/*+author:plibither8+type:commit
     dates:
       start: May 2022
       end: August 2022 (ongoing)
