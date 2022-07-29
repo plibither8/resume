@@ -58,10 +58,10 @@ experience:
     role: Engineering Intern – Frontend Platform
     location: Remote · New Delhi
     description:
-      - Created an [RFC](https://docs.google.com/document/d/1PolGRDS9XfKj-IJEBi7BTbVZeUsQfM-3qpjLsLlB-yw) and built a unified logger service for improved client-side logging by Sourcegraph's different consumer applications.
-      - Worked on improving observability and monitoring across the webapp through better Sentry integrations.
-      - Improved maintainability and speed of the **Repository Contributors page** by replacing dependence on RxJS with direct calls to the GraphQL API using Apollo Client.
-      - Contributed to 5+ accessibility improvements throughout the webapp and core components used by other clients.
+      - Created an [**RFC**](https://docs.google.com/document/d/1PolGRDS9XfKj-IJEBi7BTbVZeUsQfM-3qpjLsLlB-yw) and built a **unified logger service** for improved client-side logging by Sourcegraph's different consumer applications.
+      - Worked on improving **observability and monitoring** across the webapp through better Sentry integrations.
+      - Improved maintainability and speed of the **Repository Contributors page** by replacing dependence on **RxJS** with direct calls to the **GraphQL API using Apollo Client**.
+      - Contributed to **5+ accessibility improvements** throughout the webapp and core components used by other clients.
 
   - name: Pabio (YC S21)
     branding:

@@ -38,7 +38,7 @@
 
   <Navigation />
 
-  <div class="p-7 space-y-7">
+  <div class="p-6 space-y-6">
     <Education />
 
     <Experience />
