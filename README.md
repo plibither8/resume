@@ -1,38 +1,20 @@
-# create-svelte
+# [💼 Resume](https://resume.mihir.ch)
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+> Source code to my resume.
 
-## Creating a project
+## Details
 
-If you're seeing this, you've probably already done this step. Congrats!
+- 🌐 Hosted on [resume.mihir.ch](https://resume.mihir.ch).
+- 🔧 Built using [SvelteKit](https://kit.svelte.dev/) and Tailwind.
+- ⚡ Generated and customizable using the [resume.yaml](/static/resume.yaml) file.
 
-```bash
-# create a new project in the current directory
-npm init svelte
+## Development
 
-# create a new project in my-app
-npm init svelte my-app
-```
+- **Development:** `pnpm dev` _or_ `npm run dev`
+- **Build:** `pnpm build` _or_ `npm run build`
+  - Static files are output into the `/build` directory.
+- Make changes to the [resume.yaml](/static/resume.yaml).
 
-## Developing
+## License
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+[MIT](LICENSE)
