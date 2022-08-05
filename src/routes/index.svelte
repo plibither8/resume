@@ -21,6 +21,7 @@
   import Skills from "$lib/components/Skills.svelte";
 
   const width = 1000;
+  // TODO fix aspect ratio bug: (#1)
   const ratio = Math.SQRT1_2 * 1.001;
 
   $resume = $$props.resume as Resume;
@@ -31,7 +32,7 @@
 </svelte:head>
 
 <main
-  style="width: {width}px; aspect-ratio: {ratio};"
+  style="width: {width}px;"
   class="overflow-hidden mx-auto rounded-lg bg-white"
 >
   <Header />
