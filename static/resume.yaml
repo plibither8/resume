@@ -1,36 +1,30 @@
 meta:
   title: Mihir Chaturvedi's Resume
-  lastUpdated: July 2022
+  lastUpdated: August 2022
   viewOn:
     - name: web
       link: https://mhr.cx/resume
     - name: github
       link: https://github.com/plibither8/resume
-
 header:
   name: Mihir Chaturvedi
   title: Frontend and Web Engineer
   logo:
     path: /logos/mihir.svg
     alt: Mihir's logo
-
 navigation:
   - name: website
     alias: mihir.ch
     link: https://mihir.ch
-
   - name: mail
     alias: plibither8@gmail.com
     link: mailto:plibither8@gmail.com
-
   - name: GitHub
-    alias: "@plibither8"
+    alias: '@plibither8'
     link: https://github.com/plibither8
-
   - name: LinkedIn
-    alias: "@plibither8"
+    alias: '@plibither8'
     link: https://www.linkedin.com/in/plibither8
-
 education:
   - name: Indraprastha Institute of Information Technology, Delhi
     link: https://iiitd.ac.in
@@ -39,13 +33,12 @@ education:
       start: July 2019
       end: Present (exp. 2023)
     degree: Bachelor of Technology — Computer Science and Engineering
-    score: "GPA: 8.97/10"
-
+    score: 'GPA: 8.97/10'
 experience:
   - name: Sourcegraph
     branding:
       logo: /logos/sourcegraph.svg
-      color: "#A112FF"
+      color: '#A112FF'
     link: https://about.sourcegraph.com
     links:
       - name: website
@@ -62,11 +55,10 @@ experience:
       - Worked on improving **observability and monitoring** across the webapp through better Sentry integrations.
       - Improved maintainability and speed of the **Repository Contributors page** by replacing dependence on **RxJS** with direct calls to the **GraphQL API using Apollo Client**.
       - Contributed to **5+ accessibility improvements** throughout the webapp and core components used by other clients.
-
   - name: Pabio (YC S21)
     branding:
       logo: /logos/pabio.svg
-      color: "#FF6B6B"
+      color: '#FF6B6B'
     link: https://pabio.com
     links:
       - name: website
@@ -83,11 +75,10 @@ experience:
       - Created API endpoints in **NestJS** to add new functionalities.
       - Created a **monorepo using Rush**, integrating all the packages and auto-generated documentation.
       - Built CI pipelines and helped in architecting and managing services running on **AWS and GCP**.
-
   - name: Devfolio
     branding:
       logo: /logos/devfolio.svg
-      color: "#3770FF"
+      color: '#3770FF'
     link: https://devfolio.co
     links:
       - name: website
@@ -101,11 +92,10 @@ experience:
       - Created **50+ unit tests** using **Jest and React Testing Library** to test user flows and components.
       - Worked on the internal design library to create **reusable components using React**.
       - Fixed bugs for the main Devfolio platform and the landing, submissions, projects and profile pages.
-
   - name: Freelancer
     branding:
       logo: /logos/mihir.svg
-      color: "#5A8EC5"
+      color: '#5A8EC5'
     link: https://mihir.ch
     links:
       - name: personal website
@@ -118,7 +108,6 @@ experience:
     description:
       - Worked remotely with **5+ international clients** to build websites, browser extensions and webapps.
       - Integrated the "Markdown New Tab" browser extension into the [Orion Browser](https://browser.kagi.com/), **used by 1,000+ users**.
-
 projects:
   - name: Slash
     subtitle: Online "Cryptic Hunt" platform
@@ -129,7 +118,6 @@ projects:
     description:
       - Designed and architectured ground-up from scratch using **Node.js, Svelte and Sapper**.
       - Stood strong for the 36 hours (duration of the event) handling more than **200,000 requests** and **15,000 users**, and a **DDoS attack**.
-
   - name: Refined Hacker News
     subtitle: Browser extension
     link: https://github.com/plibither8/refined-hacker-news
@@ -144,7 +132,6 @@ projects:
       - Built a browser extension to **improve the Hacker News experience**, adding 30+ features and improvements.
       - More than **2,000 users**, and **600+ GitHub stars**.
       - Bundled using **Webpack and Babel**, published to the Chrome Webstore and Mozilla Addons.
-
   - name: Markdown New Tab
     subtitle: Browser extension
     link: https://github.com/plibither8/markdown-new-tab
@@ -158,7 +145,6 @@ projects:
     description:
       - Built a browser extension to add ability to take notes directly in the New Tab page, in Markdown format.
       - More than **3,000 users**, and **750+ GitHub stars**, and published to the Chrome Webstore and Mozilla Addons.
-
   - name: BookBroker
     subtitle: Telegram Bot
     link: https://github.com/plibither8/bookbroker
@@ -170,13 +156,11 @@ projects:
     description:
       - Built a Telegram bot to send books and documents directly to your Kindle.
       - Integrated APIs from Telegram, Sendgrid, Razorpay and Calibre; developed using TypeScript and self-hosted.
-
 highlights:
-  - "[**Grand Prize Winner** at InOut 6](https://devfolio.co/blog/inout6-recap/#grand-prize), India's largest community-organized hackathon."
-  - "**Dean's List Award** for Academic Excellence 2021."
-  - "**3,500+ GitHub stars** on 5 projects (combined)."
-  - "[2048.cpp](https://github.com/plibither8/2048.cpp) featured by GitHub on [Twitter](https://twitter.com/github/status/1017094930991370240) and [Facebook](https://www.facebook.com/GitHub/videos/1433491453419807/)."
-
+  - '[**Grand Prize Winner** at InOut 6](https://devfolio.co/blog/inout6-recap/#grand-prize), India''s largest community-organized hackathon.'
+  - '**Dean''s List Award** for Academic Excellence 2021.'
+  - '**3,500+ GitHub stars** on 5 projects (combined).'
+  - '[2048.cpp](https://github.com/plibither8/2048.cpp) featured by GitHub on [Twitter](https://twitter.com/github/status/1017094930991370240) and [Facebook](https://www.facebook.com/GitHub/videos/1433491453419807/).'
 skills:
   - type: Languages
     items:
