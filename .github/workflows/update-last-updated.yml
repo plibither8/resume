@@ -1,0 +1,24 @@
+# Update date on every commit
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-last-updated:
+    - uses: @actions/checkout@v2
+    - name: Get last updated date:
+      run: echo "LAST_UPDATED=$(git log -1 --format=%cd --date=format:"%B %Y")" >> $GITHUB_ENV
+    - name: Update resume.yaml
+      uses: fjogeleit/yaml-update-action@main
+      with:
+        valueFile: static/resume.yaml
+        propertyPath: meta.lastUpdated
+        value: ${{ env.LAST_UPDATED }}
+        commitChange: true
+        message: '[bot] Update "Last updated" date'
+        branch: main
+        masterBranchName: main
+        commitUserName: plibother8
+        commitUserEmail: bot@mihir.ch
+        token: ${{ secrets.BOT_PAT }}
