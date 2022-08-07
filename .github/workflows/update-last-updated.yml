@@ -18,7 +18,7 @@ jobs:
           propertyPath: meta.lastUpdated
           value: ${{ env.LAST_UPDATED }}
           commitChange: true
-          message: '[bot] Update "Last updated" date'
+          message: '[bot] [skip ci] Update "Last updated" date'
           branch: main
           masterBranchName: main
           commitUserName: plibother8
