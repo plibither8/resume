@@ -54,7 +54,7 @@ experience:
         link: https://sourcegraph.com/search?q=context:global+repo:%5Egithub%5C.com/sourcegraph/*%40*refs/heads/*+author:plibither8+type:commit
     dates:
       start: May 2022
-      end: August 2022 (ongoing)
+      end: August 2022
     role: Engineering Intern – Frontend Platform
     location: Remote · New Delhi
     description:
