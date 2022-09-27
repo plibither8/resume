@@ -1,15 +1,3 @@
-<script context="module" lang="ts">
-  import yaml from "js-yaml";
-
-  /** @type {import('./__types').Load} */
-  export async function load({ fetch }) {
-    const yamlFile = "/resume.yaml";
-    const response = await fetch(yamlFile);
-    const resume = yaml.load(await response.text()) as Resume;
-    return { props: { resume } };
-  }
-</script>
-
 <script lang="ts">
   import { resume } from "$lib/stores";
   import Highlights from "$lib/components/Highlights.svelte";
@@ -24,7 +12,7 @@
   // TODO fix aspect ratio bug: (#1)
   const ratio = Math.SQRT1_2 * 1.001;
 
-  $resume = $$props.resume as Resume;
+  $resume = $$props.data.resume as Resume;
 </script>
 
 <svelte:head>
