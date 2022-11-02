@@ -8,14 +8,16 @@
 </script>
 
 <Section heading="Experience" class="space-y-5">
-  {#each experience as { name, branding, link, links, dates, role, location, description }}
+  {#each experience as { name, branding, link, links, dates, role, location, description = null }}
     <article class="flex gap-3">
       <aside class="flex flex-col items-center gap-5">
-        <Logo {name} logo={branding.logo} {link} />
-        <div
-          class="w-1 h-full rounded-md opacity-20"
-          style="background: {branding.color}"
-        />
+        <Logo {name} {link} logo={branding.logo} />
+        {#if description}
+          <div
+            class="w-1 h-full rounded-md opacity-20"
+            style="background: {branding.color}"
+          />
+        {/if}
       </aside>
 
       <div class="flex-1 space-y-2">
@@ -31,7 +33,8 @@
               </p>
             </div>
             <span class="text-sm text-slate-500">
-              {dates.start} &ndash; {dates.end}
+              {dates.start}
+              {dates.end ? `– ${dates.end}` : ""}
             </span>
           </div>
 
@@ -52,7 +55,9 @@
         </header>
 
         <!-- Description -->
-        <List list={description} />
+        {#if description}
+          <List list={description} />
+        {/if}
       </div>
     </article>
   {/each}

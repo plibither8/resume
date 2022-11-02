@@ -39,6 +39,19 @@ education:
     score: "GPA: 8.97/10"
 
 experience:
+  - name: Flux
+    branding:
+      logo: /logos/flux.svg
+      color: "#1DFDC0"
+    link: https://www.flux.ai/p
+    links:
+      - name: website
+        link: https://www.flux.ai/p
+    dates:
+      start: January 2023
+    role: "[Incoming] Frontend Intern – R&D Team"
+    location: Remote · New Delhi
+
   - name: Sourcegraph
     branding:
       logo: /logos/sourcegraph.svg
