@@ -51,6 +51,8 @@ experience:
       start: January 2023
     role: "[Incoming] Frontend Intern – R&D Team"
     location: Remote · New Delhi
+    description:
+      - Will work to program new frontend features, new React components, tooling, usability, and algorithmic design.
 
   - name: Sourcegraph
     branding:
@@ -68,7 +70,7 @@ experience:
     role: Engineering Intern – Frontend Platform
     location: Remote · New Delhi
     description:
-      - Created an [**RFC**](https://docs.google.com/document/d/1GWpdzzzcieDwAIMoaw1A7iCO4LmUOR-bb9yYHMiCLfM) and built a **unified logger service** for improved client-side logging by Sourcegraph's different consumer applications.
+      - Created an [**RFC**](https://docs.google.com/document/d/1GWpdzzzcieDwAIMoaw1A7iCO4LmUOR-bb9yYHMiCLfM) to build a **unified logger service** for improved client-side logging by Sourcegraph's different consumer applications.
       - Worked on improving **observability and monitoring** across the webapp through better Sentry integrations.
       - Improved maintainability and speed of the **Repository Contributors page** by replacing dependence on **RxJS** with direct calls to the **GraphQL API using Apollo Client**.
       - Contributed to **5+ accessibility improvements** throughout the webapp and core components used by other clients.

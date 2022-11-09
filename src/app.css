@@ -6,3 +6,9 @@
 body {
   @apply bg-slate-900;
 }
+
+@media print {
+  body {
+    @apply bg-white;
+  }
+}
