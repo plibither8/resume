@@ -49,10 +49,11 @@ experience:
         link: https://www.flux.ai/p
     dates:
       start: January 2023
-    role: "[Incoming] Frontend Intern – R&D Team"
+      end: Present
+    role: "Frontend Intern – R&D Team"
     location: Remote · New Delhi
     description:
-      - Will work to program new frontend features, new React components, tooling, usability, and algorithmic design.
+      - Working to program new frontend features (graphics and simulation), new React components, tooling, usability, and algorithmic design.
 
   - name: Sourcegraph
     branding:
