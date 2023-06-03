@@ -34,9 +34,9 @@ education:
     logo: /logos/iiitd.svg
     dates:
       start: July 2019
-      end: Present (exp. 2023)
+      end: June 2023
     degree: Bachelor of Technology — Computer Science and Engineering
-    score: "GPA: 8.97/10"
+    score: "GPA: 8.8/10"
 
 experience:
   - name: Flux
@@ -92,10 +92,10 @@ experience:
     role: JavaScript Engineer Intern
     location: Remote · New Delhi
     description:
-      - Built and maintained the user-facing website and internal platform using **NextJS and TypeScript**.
-      - Created API endpoints in **NestJS** to add new functionalities.
-      - Created a **monorepo using Rush**, integrating all the packages and auto-generated documentation.
-      - Built CI pipelines and helped in architecting and managing services running on **AWS and GCP**.
+      - Developed and maintained user-facing website and internal platform using **NextJS** and **TypeScript**.
+      - Implemented new functionalities by creating **NestJS** API endpoints.
+      - Established a **monorepo** using **Rush**, enabling seamless integration of packages and automatic documentation generation.
+      - Built and managed CI pipelines, and played a role in architecting and managing services on **AWS** and **GCP**.
 
   - name: Devfolio
     branding:
@@ -111,9 +111,9 @@ experience:
     role: Frontend Engineer Intern
     location: Remote · New Delhi
     description:
-      - Created **50+ unit tests** using **Jest and React Testing Library** to test user flows and components.
-      - Worked on the internal design library to create **reusable components using React**.
-      - Fixed bugs for the main Devfolio platform and the landing, submissions, projects and profile pages.
+      - Developed **50+ unit tests** using **Jest** and **React Testing Library** to thoroughly validate user flows and components.
+      - Enhanced the internal design library by crafting **reusable React components** for improved development efficiency.
+      - Resolved bugs across various key sections, including the main Devfolio platform, as well as the landing, submissions, projects, and profile pages.
 
   - name: Freelancer
     branding:
@@ -140,8 +140,8 @@ projects:
       - name: GitHub
         link: https://github.com/IEEE-IIIT-Delhi/slash-platform
     description:
-      - Designed and architectured ground-up from scratch using **Node.js, Svelte and Sapper**.
-      - Stood strong for the 36 hours (duration of the event) handling more than **200,000 requests** and **15,000 users**, and a **DDoS attack**.
+      - Designed and architectured ground-up from scratch using **Node.js**, **Svelte**, and **Sapper**.
+      - Successfully handled over **200,000 requests** and **15,000 users**, including mitigating a **DDoS attack**, during the 36-hour event.
 
   - name: Refined Hacker News
     subtitle: Browser extension
@@ -154,9 +154,9 @@ projects:
       - name: Mozilla Add-Ons
         link: https://addons.mozilla.org/en-US/firefox/addon/refined-hacker-news/
     description:
-      - Built a browser extension to **improve the Hacker News experience**, adding 30+ features and improvements.
-      - More than **2,000 users**, and **600+ GitHub stars**.
-      - Bundled using **Webpack and Babel**, published to the Chrome Webstore and Mozilla Addons.
+      - Built a browser extension to **improve the Hacker News experience**, incorporating 30+ features and enhancements.
+      - Garnered a user base of **2,000+ users** and **600+ GitHub stars**.
+      - Packaged the extension using **Webpack** and **Babel**, and published it to the Chrome Web Store and Mozilla Add-ons.
 
   - name: Markdown New Tab
     subtitle: Browser extension
@@ -169,8 +169,9 @@ projects:
       - name: Mozilla Add-Ons
         link: https://addons.mozilla.org/en-US/firefox/addon/markdown-new-tab/
     description:
-      - Built a browser extension to add ability to take notes directly in the New Tab page, in Markdown format.
-      - More than **3,000 users**, and **750+ GitHub stars**, and published to the Chrome Webstore and Mozilla Addons.
+      - Developed a browser extension enabling users to take notes in Markdown format directly on the New Tab page.
+      - Gained a user base of over **3,000 users** and received **750+ GitHub stars**.
+      - Published the extension on the Chrome Web Store and Mozilla Add-ons.
 
   - name: BookBroker
     subtitle: Telegram Bot
@@ -181,8 +182,9 @@ projects:
       - name: Telegram Chat
         link: https://t.me/bookbrokerbot
     description:
-      - Built a Telegram bot to send books and documents directly to your Kindle.
-      - Integrated APIs from Telegram, Sendgrid, Razorpay and Calibre; developed using TypeScript and self-hosted.
+      - Created a Telegram bot that facilitates sending books and documents directly to Kindle devices.
+      - Integrated APIs from Telegram, Sendgrid, Razorpay, and Calibre for seamless functionality.
+      - Developed the bot using TypeScript and hosted it on a self-hosted server.
 
 highlights:
   - "[**Grand Prize Winner** at InOut 6](https://devfolio.co/blog/inout6-recap/#grand-prize), India's largest community-organized hackathon."
