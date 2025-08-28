@@ -7,11 +7,11 @@
   const { experience } = $resume;
 </script>
 
-<Section heading="Experience" class="space-y-5">
+<Section heading="Experience" class="space-y-4">
   {#each experience as { name, branding, link, links, dates, role, location, description = null }}
     <article class="flex gap-3">
       <aside class="flex flex-col items-center gap-5">
-        <Logo {name} {link} logo={branding.logo} />
+        <Logo {name} {link} logo={branding.logo} color={branding.color} />
         {#if description}
           <div
             class="w-1 h-full rounded-md opacity-20"

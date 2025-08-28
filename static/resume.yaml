@@ -1,6 +1,6 @@
 meta:
   title: Mihir Chaturvedi's Resume
-  lastUpdated: June 2023
+  lastUpdated: Aug 2025
   viewOn:
     - name: web
       link: https://mhr.cx/resume
@@ -42,23 +42,45 @@ experience:
   - name: Flux
     branding:
       logo: /logos/flux.svg
-      color: "#1DFDC0"
+      color: "#28A784"
+    link: https://www.flux.ai/p
+    links:
+      - name: website
+        link: https://www.flux.ai/p
+    dates:
+      start: July 2023
+      end: Present
+    role: Software Engineer – Fullstack
+    location: Remote · New Delhi
+    description:
+      - Led engineering across the stack for Flux's flagship **AI Auto-Layout feature**, driving **3x user growth** and **$1M+ ARR**.
+      - Directed collaboration with external **AI vendors** to integrate their solutions into Flux's platform.
+      - Built Smart Vias, cutting a **multi-hour PCB routing** step down to **seconds** and achieving **feature parity** with top competitors.
+      - "**Reverse-engineered Altium's undocumented schematic format** to build Flux's first importer, enabling **migration of professional users**."
+      - Partnered with **customers and the Flux community** to triage issues, fix bugs, and feed insights into product development.
+      - "**Refactored monolithic 2000+ LoC services** into event-driven modular architectures with specialized components, **purified Redux** state management, improving code maintainability and system performance."
+
+  - name: Flux
+    branding:
+      logo: /logos/flux.svg
+      color: "#28A784"
     link: https://www.flux.ai/p
     links:
       - name: website
         link: https://www.flux.ai/p
     dates:
       start: January 2023
-      end: Present
-    role: "Frontend Intern – R&D Team"
+      end: July 2023
+    role: Frontend Intern
     location: Remote · New Delhi
     description:
-      - Working to program new frontend features (graphics and simulation), new React components, tooling, usability, and algorithmic design.
+      - Led the development of the contextual rule editor for the PCB Layout, enabling users to create and manage rules efficiently, cutting rule modification time by **80%** for all users, and reaching **~100% feature adoption**.
+      - Shipped **20+ improvements** and bug fixes across the webapp, improving stability and user experience.
 
   - name: Sourcegraph
     branding:
       logo: /logos/sourcegraph.svg
-      color: "#A112FF"
+      color: "#F34E3F"
     link: https://about.sourcegraph.com
     links:
       - name: website
@@ -92,8 +114,7 @@ experience:
     role: JavaScript Engineer Intern
     location: Remote · New Delhi
     description:
-      - Developed and maintained user-facing website and internal platform using **NextJS** and **TypeScript**.
-      - Implemented new functionalities by creating **NestJS** API endpoints.
+      - Developed and maintained user-facing website and internal platform using **NextJS** and **TypeScript**, and implemented new functionalities by creating **NestJS** API endpoints.
       - Established a **monorepo** using **Rush**, enabling seamless integration of packages and automatic documentation generation.
       - Built and managed CI pipelines, and played a role in architecting and managing services on **AWS** and **GCP**.
 
