@@ -8,6 +8,6 @@
     "not_found_handling": "404-page",
   },
   "workers_dev": true,
-  // Added at cutover, once the old resume.mihir.ch DNS record (Netlify) is gone:
-  // "routes": [{ "pattern": "resume.mihir.ch", "custom_domain": true }],
+  // Cloudflare manages the DNS record for a custom domain; don't add one by hand.
+  "routes": [{ "pattern": "resume.mihir.ch", "custom_domain": true }],
 }
