@@ -1,0 +1,58 @@
+---
+import type { Resume } from "../lib/tex/types";
+import Inline from "./Inline.astro";
+
+interface Props {
+  resume: Resume;
+  lastUpdated: string;
+}
+
+const { resume, lastUpdated } = Astro.props;
+const external = (href: string) => /^https?:/.test(href);
+---
+
+<header class="bg-slate-50 px-6 pt-6 pb-5 sm:px-8">
+  <div
+    class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between"
+  >
+    <h1 class="text-3xl font-bold tracking-tight text-slate-800">
+      {resume.name}
+    </h1>
+    <aside class="space-y-1 text-xs text-slate-400 sm:text-right print:hidden">
+      <p>Last updated <strong class="text-slate-500">{lastUpdated}</strong></p>
+      <p>
+        PDF: <a href="/resume.pdf">full</a>
+        <span aria-hidden="true">&middot;</span>
+        <a href="/resume-1page.pdf">1-page</a>
+      </p>
+    </aside>
+  </div>
+
+  <nav
+    class="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-sm text-slate-600"
+    aria-label="Contact"
+  >
+    {
+      resume.contacts.map((contact) =>
+        contact.href ? (
+          <a
+            href={contact.href}
+            {...(external(contact.href)
+              ? { target: "_blank", rel: "noopener noreferrer" }
+              : {})}
+          >
+            <Inline nodes={contact.label} />
+          </a>
+        ) : (
+          <span>
+            <Inline nodes={contact.label} />
+          </span>
+        )
+      )
+    }
+  </nav>
+
+  <p class="mt-4 max-w-3xl text-sm leading-relaxed text-slate-600">
+    <Inline nodes={resume.summary} />
+  </p>
+</header>

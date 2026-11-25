@@ -1,0 +1,33 @@
+---
+import type { Entry } from "../lib/tex/types";
+import Bullets from "./Bullets.astro";
+import Inline from "./Inline.astro";
+
+interface Props {
+  entry: Entry;
+}
+
+const { entry } = Astro.props;
+---
+
+<article class="break-inside-avoid">
+  <header class="space-y-0.5">
+    <div
+      class="flex flex-col gap-x-4 sm:flex-row sm:items-baseline sm:justify-between"
+    >
+      <h3 class="font-semibold text-slate-800">
+        <Inline nodes={entry.title} />
+      </h3>
+      <span class="text-sm text-slate-500 tabular-nums sm:shrink-0">
+        <Inline nodes={entry.dates} />
+      </span>
+    </div>
+    <div
+      class="flex flex-col gap-x-4 text-sm text-slate-500 italic sm:flex-row sm:items-baseline sm:justify-between"
+    >
+      <span><Inline nodes={entry.subtitle} /></span>
+      <span class="sm:shrink-0"><Inline nodes={entry.meta} /></span>
+    </div>
+  </header>
+  <Bullets bullets={entry.bullets} />
+</article>

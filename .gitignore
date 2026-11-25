@@ -1,11 +1,15 @@
 .DS_Store
 node_modules
-/build
-/.svelte-kit
-/package
+dist
+.astro
+.wrangler
 .env
 .env.*
 !.env.example
+
+# Built from resume/*.tex by scripts/build-pdf.sh
+public/resume.pdf
+public/resume-1page.pdf
 
 # LaTeX build outputs
 resume/*.pdf

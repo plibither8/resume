@@ -1,19 +1,29 @@
-# [💼 Resume](https://resume.mihir.ch)
+# [Resume](https://resume.mihir.ch)
 
-> Source code to my resume.
+> Mihir Chaturvedi's resume. One LaTeX file builds both PDFs and the website.
 
-## Details
+## How it works
 
-- 🌐 Hosted on [resume.mihir.ch](https://resume.mihir.ch).
-- 🔧 Built using [SvelteKit](https://kit.svelte.dev/) and Tailwind.
-- ⚡ Generated and customizable using the [resume.yaml](/static/resume.yaml) file.
+- **[`resume/resume.tex`](resume/resume.tex) is the only place resume content lives.** Edit it, push, and everything below rebuilds.
+- [`resume/resume-1page.tex`](resume/resume-1page.tex) is a one-line wrapper. It defines `\onepage` and inputs `resume.tex`. In the body, `\variant{full}{short}` picks text per PDF, and `\fullonly{...}` appears only in the full PDF.
+- [Tectonic](https://tectonic-typesetting.github.io) compiles both PDFs (`scripts/build-pdf.sh`).
+- The site is [Astro](https://astro.build) + Tailwind. [`src/lib/tex`](src/lib/tex) parses the tex body into a typed model that the page renders.
+- The tex body may only use the content macros declared in the preamble. Anything else fails the build with a line number, so nothing can silently go missing from the site.
+- GitHub Actions tests and builds every push. On `main` it deploys `dist/` to a Cloudflare Worker that serves static assets.
 
 ## Development
 
-- **Development:** `pnpm dev` _or_ `npm run dev`
-- **Build:** `pnpm build` _or_ `npm run build`
-  - Static files are output into the `/build` directory.
-- Make changes to the [resume.yaml](/static/resume.yaml).
+Needs Node 24 (`.nvmrc`), pnpm and Tectonic (`brew install tectonic`).
+
+```sh
+pnpm install
+pnpm dev     # builds the PDFs, then starts Astro
+pnpm test    # parser tests, including a snapshot of the parsed resume
+pnpm check   # astro check (types)
+pnpm build   # PDFs + static site into dist/
+```
+
+After a content change, run `pnpm test -u` to update the snapshot.
 
 ## License
 

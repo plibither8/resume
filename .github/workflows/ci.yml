@@ -1,0 +1,78 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  TECTONIC_VERSION: 0.16.9
+  # sha256 of tectonic-<version>-x86_64-unknown-linux-musl.tar.gz from the GitHub release.
+  TECTONIC_SHA256: 60b13a0826ae7ad9ce34b4a2df06bff2cfcfa6dda8a915477c0cbb84e1a4a902
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      HAS_CLOUDFLARE_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0 # "Last updated" reads the git history of resume.tex
+
+      - uses: pnpm/action-setup@v6
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - name: Install Tectonic
+        run: |
+          name="tectonic-${TECTONIC_VERSION}-x86_64-unknown-linux-musl.tar.gz"
+          curl -fsSL -o "$RUNNER_TEMP/$name" \
+            "https://github.com/tectonic-typesetting/tectonic/releases/download/tectonic%40${TECTONIC_VERSION}/$name"
+          echo "${TECTONIC_SHA256}  $RUNNER_TEMP/$name" | sha256sum -c -
+          mkdir -p "$HOME/.local/bin"
+          tar -xzf "$RUNNER_TEMP/$name" -C "$HOME/.local/bin"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Cache Tectonic bundle
+        uses: actions/cache@v6
+        with:
+          path: ~/.cache/Tectonic
+          key: tectonic-${{ env.TECTONIC_VERSION }}-${{ hashFiles('resume/*.tex') }}
+          restore-keys: tectonic-${{ env.TECTONIC_VERSION }}-
+
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm test
+      - run: pnpm check
+      - run: pnpm build
+
+      - name: Check no phone number is published
+        run: |
+          if grep -rIl -E '\+91|882 ?646' dist; then
+            echo "::error::a phone number made it into dist/"
+            exit 1
+          fi
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: site
+          path: dist
+
+      - name: Deploy to Cloudflare
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && env.HAS_CLOUDFLARE_TOKEN == 'true'
+        run: pnpm exec wrangler deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+      - name: Skip deploy (no Cloudflare token yet)
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && env.HAS_CLOUDFLARE_TOKEN != 'true'
+        run: echo "::notice::CLOUDFLARE_API_TOKEN isn't set, so this run built and tested but didn't deploy."

@@ -1,0 +1,35 @@
+---
+import type { Inline } from "../lib/tex/types";
+
+interface Props {
+  nodes: Inline[];
+}
+
+const { nodes } = Astro.props;
+const external = (href: string) => /^https?:/.test(href);
+---
+
+{
+  nodes.map((node) =>
+    node.type === "text" ? (
+      node.text
+    ) : node.type === "bold" ? (
+      <strong class="font-semibold text-slate-800">
+        <Astro.self nodes={node.children} />
+      </strong>
+    ) : node.type === "italic" ? (
+      <em>
+        <Astro.self nodes={node.children} />
+      </em>
+    ) : (
+      <a
+        href={node.href}
+        {...(external(node.href)
+          ? { target: "_blank", rel: "noopener noreferrer" }
+          : {})}
+      >
+        <Astro.self nodes={node.children} />
+      </a>
+    )
+  )
+}

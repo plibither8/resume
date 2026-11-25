@@ -1,0 +1,13 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // A Worker with no script: it only serves the static Astro build and the PDFs.
+  "name": "resume",
+  "compatibility_date": "2026-11-25",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page",
+  },
+  "workers_dev": true,
+  // Added at cutover, once the old resume.mihir.ch DNS record (Netlify) is gone:
+  // "routes": [{ "pattern": "resume.mihir.ch", "custom_domain": true }],
+}

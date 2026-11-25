@@ -1,0 +1,110 @@
+---
+import { execFileSync } from "node:child_process";
+import tex from "../../resume/resume.tex?raw";
+import Entry from "../components/Entry.astro";
+import Header from "../components/Header.astro";
+import Inline from "../components/Inline.astro";
+import Project from "../components/Project.astro";
+import Section from "../components/Section.astro";
+import { parseResume, plainText } from "../lib/tex/parse";
+import "../styles/global.css";
+
+const resume = parseResume(tex);
+
+/** Month of the last commit that touched resume.tex, or today if git history isn't available. */
+function lastUpdated(): string {
+  const format = (d: Date) =>
+    d.toLocaleDateString("en-GB", { month: "long", year: "numeric" });
+  try {
+    const iso = execFileSync(
+      "git",
+      ["log", "-1", "--format=%cI", "--", "resume/resume.tex"],
+      { encoding: "utf8" }
+    ).trim();
+    if (iso) return format(new Date(iso));
+  } catch {
+    // Not a git checkout (or git missing): fall back to the build date.
+  }
+  return format(new Date());
+}
+
+const description = plainText(resume.summary);
+const title = `${resume.name} · Resume`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={Astro.site} />
+    <link rel="canonical" href={Astro.site} />
+    <link rel="icon" href="/logos/mihir.svg" type="image/svg+xml" />
+  </head>
+  <body class="px-3 py-6 sm:px-6 sm:py-10 print:p-0">
+    <main
+      class="mx-auto max-w-[960px] overflow-hidden rounded-xl bg-white shadow-2xl shadow-black/30 print:max-w-none print:rounded-none print:shadow-none"
+    >
+      <Header resume={resume} lastUpdated={lastUpdated()} />
+
+      <div class="space-y-8 px-6 py-7 sm:px-8">
+        {
+          resume.sections.map((section) => (
+            <Section title={section.title}>
+              {section.blocks.every((b) => b.kind === "skill") ? (
+                <dl class="space-y-1 text-sm leading-relaxed text-slate-600">
+                  {section.blocks.map(
+                    (b) =>
+                      b.kind === "skill" && (
+                        <div>
+                          <dt class="inline font-semibold text-slate-800">
+                            <Inline nodes={b.label} />:
+                          </dt>{" "}
+                          <dd class="inline">
+                            <Inline nodes={b.items} />
+                          </dd>
+                        </div>
+                      )
+                  )}
+                </dl>
+              ) : section.blocks.every((b) => b.kind === "achievement") ? (
+                <ul class="space-y-1.5 text-sm leading-relaxed text-slate-600">
+                  {section.blocks.map(
+                    (b) =>
+                      b.kind === "achievement" && (
+                        <li>
+                          <strong class="font-semibold text-slate-800">
+                            <Inline nodes={b.title} />
+                          </strong>
+                          <span class="mx-1 text-slate-300" aria-hidden="true">
+                            |
+                          </span>
+                          <em class="text-slate-500">
+                            <Inline nodes={b.detail} />
+                          </em>
+                        </li>
+                      )
+                  )}
+                </ul>
+              ) : (
+                <div class="space-y-5">
+                  {section.blocks.map((b) =>
+                    b.kind === "entry" ? (
+                      <Entry entry={b} />
+                    ) : b.kind === "project" ? (
+                      <Project project={b} />
+                    ) : null
+                  )}
+                </div>
+              )}
+            </Section>
+          ))
+        }
+      </div>
+    </main>
+  </body>
+</html>

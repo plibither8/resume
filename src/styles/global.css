@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-slate-900 text-slate-700 antialiased;
+  }
+
+  a {
+    @apply underline decoration-slate-300 underline-offset-2 transition-colors hover:decoration-slate-600;
+  }
+}
+
+@media print {
+  @page {
+    margin: 0.5in;
+  }
+
+  body {
+    @apply bg-white;
+  }
+}

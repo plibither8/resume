@@ -1,0 +1,22 @@
+---
+import type { Inline as InlineNodes } from "../lib/tex/types";
+import Inline from "./Inline.astro";
+
+interface Props {
+  bullets: InlineNodes[][];
+}
+
+const { bullets } = Astro.props;
+---
+
+{
+  bullets.length > 0 && (
+    <ul class="mt-2 list-[circle] space-y-1 pl-5 text-sm leading-relaxed text-slate-600 marker:text-slate-400">
+      {bullets.map((bullet) => (
+        <li class="pl-1">
+          <Inline nodes={bullet} />
+        </li>
+      ))}
+    </ul>
+  )
+}

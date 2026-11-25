@@ -1,0 +1,566 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`resume/resume.tex > parses 1`] = `
+{
+  "contacts": [
+    {
+      "href": "mailto:plibither8@gmail.com",
+      "label": [
+        {
+          "text": "plibither8@gmail.com",
+          "type": "text",
+        },
+      ],
+    },
+    {
+      "href": "https://mihir.ch",
+      "label": [
+        {
+          "text": "mihir.ch",
+          "type": "text",
+        },
+      ],
+    },
+    {
+      "href": "https://github.com/plibither8",
+      "label": [
+        {
+          "text": "github.com/plibither8",
+          "type": "text",
+        },
+      ],
+    },
+    {
+      "href": "https://www.linkedin.com/in/plibither8",
+      "label": [
+        {
+          "text": "linkedin.com/in/plibither8",
+          "type": "text",
+        },
+      ],
+    },
+  ],
+  "name": "Mihir Chaturvedi",
+  "sections": [
+    {
+      "blocks": [
+        {
+          "bullets": [
+            [
+              {
+                "text": "Architected and led a ground-up rewrite of the core connectivity data model of Flux’s circuit-board design app (300+ PRs), replacing 4 out-of-sync data stores with one source of truth for all editors and the AI agent.",
+                "type": "text",
+              },
+            ],
+            [
+              {
+                "text": "Built a reusable data-migration platform (backups, dry-run verification, automated failure triage, one-click rollback) that upgraded 265K live projects of 64K users in place with 99.999% success.",
+                "type": "text",
+              },
+            ],
+            [
+              {
+                "text": "Led full-stack engineering of Flux’s flagship AI feature for automatic circuit-board layout, integrating external AI vendors; used 76K times by 30K users, who account for 47% of revenue, driving 3x user growth and $1M+ ARR.",
+                "type": "text",
+              },
+            ],
+            [
+              {
+                "text": "Reverse-engineered the undocumented file format of the industry-leading circuit design tool to build Flux’s first design importer, letting 675+ professional users move 878 existing projects into Flux.",
+                "type": "text",
+              },
+            ],
+            [
+              {
+                "text": "Built a one-click tool for connecting circuit-board layers (Smart Vias), cutting a multi-hour manual step down to seconds and reaching feature parity with top competitors.",
+                "type": "text",
+              },
+            ],
+            [
+              {
+                "text": "Shipped 490+ production PRs in 2026 (159 in June) by running AI agents (Devin, Claude Code) in parallel.",
+                "type": "text",
+              },
+            ],
+            [
+              {
+                "text": "Redesigned how users connect components in the circuit editor, with a context menu at each pin, automatic labels, and automatic wiring; used 78K times by 1.7K users in 5 months.",
+                "type": "text",
+              },
+            ],
+          ],
+          "dates": [
+            {
+              "text": "July 2023 – November 2026",
+              "type": "text",
+            },
+          ],
+          "kind": "entry",
+          "meta": [
+            {
+              "text": "Remote – New Delhi",
+              "type": "text",
+            },
+          ],
+          "subtitle": [
+            {
+              "text": "Flux",
+              "type": "text",
+            },
+          ],
+          "title": [
+            {
+              "text": "Software Engineer – Fullstack",
+              "type": "text",
+            },
+          ],
+        },
+        {
+          "bullets": [
+            [
+              {
+                "text": "Led development of an in-context editor for circuit-board design rules, cutting rule editing time by 80% and reaching near-universal adoption with 750K+ edits by 12K+ users.",
+                "type": "text",
+              },
+            ],
+            [
+              {
+                "text": "Shipped 20+ improvements and bug fixes across the webapp, improving stability and user experience.",
+                "type": "text",
+              },
+            ],
+          ],
+          "dates": [
+            {
+              "text": "January 2023 – July 2023",
+              "type": "text",
+            },
+          ],
+          "kind": "entry",
+          "meta": [
+            {
+              "text": "Remote – New Delhi",
+              "type": "text",
+            },
+          ],
+          "subtitle": [
+            {
+              "text": "Flux",
+              "type": "text",
+            },
+          ],
+          "title": [
+            {
+              "text": "Frontend Intern",
+              "type": "text",
+            },
+          ],
+        },
+        {
+          "bullets": [
+            [
+              {
+                "text": "Proposed an RFC for a unified logger service to enhance client-side logging for Sourcegraph’s consumer applications.",
+                "type": "text",
+              },
+            ],
+            [
+              {
+                "text": "Enhanced observability and monitoring of webapp through optimized Sentry integrations.",
+                "type": "text",
+              },
+            ],
+            [
+              {
+                "text": "Streamlined Repository Contributors page by replacing RxJS dependencies with direct Apollo Client calls to GraphQL API, boosting maintainability and speed.",
+                "type": "text",
+              },
+            ],
+            [
+              {
+                "text": "Implemented over 5 accessibility improvements across webapp and core components for enhanced usability by all platform consumers.",
+                "type": "text",
+              },
+            ],
+          ],
+          "dates": [
+            {
+              "text": "May 2022 – August 2022",
+              "type": "text",
+            },
+          ],
+          "kind": "entry",
+          "meta": [
+            {
+              "text": "Remote – New Delhi",
+              "type": "text",
+            },
+          ],
+          "subtitle": [
+            {
+              "text": "Sourcegraph",
+              "type": "text",
+            },
+          ],
+          "title": [
+            {
+              "text": "Engineering Intern – Frontend Platform",
+              "type": "text",
+            },
+          ],
+        },
+        {
+          "bullets": [
+            [
+              {
+                "text": "Developed and maintained user-facing website and internal platform using NextJS and TypeScript, and implemented new functionalities by creating NestJS API endpoints.",
+                "type": "text",
+              },
+            ],
+            [
+              {
+                "text": "Established a monorepo using Rush, enabling seamless integration of packages and automatic documentation generation.",
+                "type": "text",
+              },
+            ],
+            [
+              {
+                "text": "Built and managed CI pipelines, and played a role in architecting and managing services on AWS and GCP.",
+                "type": "text",
+              },
+            ],
+          ],
+          "dates": [
+            {
+              "text": "March 2021 – April 2022",
+              "type": "text",
+            },
+          ],
+          "kind": "entry",
+          "meta": [
+            {
+              "text": "Remote – New Delhi",
+              "type": "text",
+            },
+          ],
+          "subtitle": [
+            {
+              "text": "Pabio (YC S21)",
+              "type": "text",
+            },
+          ],
+          "title": [
+            {
+              "text": "JavaScript Engineer Intern",
+              "type": "text",
+            },
+          ],
+        },
+        {
+          "bullets": [
+            [
+              {
+                "text": "Developed 50+ unit tests using Jest and React Testing Library to thoroughly validate user flows and components.",
+                "type": "text",
+              },
+            ],
+            [
+              {
+                "text": "Enhanced the internal design library by crafting reusable React components for improved development efficiency.",
+                "type": "text",
+              },
+            ],
+            [
+              {
+                "text": "Resolved bugs across various key sections, including the main Devfolio platform, as well as the landing, submissions, projects, and profile pages.",
+                "type": "text",
+              },
+            ],
+          ],
+          "dates": [
+            {
+              "text": "December 2020 – March 2021",
+              "type": "text",
+            },
+          ],
+          "kind": "entry",
+          "meta": [
+            {
+              "text": "Remote – New Delhi",
+              "type": "text",
+            },
+          ],
+          "subtitle": [
+            {
+              "text": "Devfolio",
+              "type": "text",
+            },
+          ],
+          "title": [
+            {
+              "text": "Frontend Engineer Intern",
+              "type": "text",
+            },
+          ],
+        },
+        {
+          "bullets": [
+            [
+              {
+                "text": "Worked remotely with 5+ international clients to build websites, browser extensions, and webapps.",
+                "type": "text",
+              },
+            ],
+            [
+              {
+                "text": "Integrated the “Markdown New Tab” browser extension into the Orion Browser, used by 1,000+ users.",
+                "type": "text",
+              },
+            ],
+          ],
+          "dates": [
+            {
+              "text": "June 2019 – March 2021",
+              "type": "text",
+            },
+          ],
+          "kind": "entry",
+          "meta": [
+            {
+              "text": "Remote – New Delhi",
+              "type": "text",
+            },
+          ],
+          "subtitle": [
+            {
+              "text": "Self-Employed",
+              "type": "text",
+            },
+          ],
+          "title": [
+            {
+              "text": "Freelance Web Developer",
+              "type": "text",
+            },
+          ],
+        },
+      ],
+      "title": "Experience",
+    },
+    {
+      "blocks": [
+        {
+          "bullets": [],
+          "dates": [
+            {
+              "text": "July 2019 – June 2023",
+              "type": "text",
+            },
+          ],
+          "kind": "entry",
+          "meta": [
+            {
+              "text": "GPA: 8.8/10",
+              "type": "text",
+            },
+          ],
+          "subtitle": [
+            {
+              "text": "Bachelor of Technology — Computer Science and Engineering",
+              "type": "text",
+            },
+          ],
+          "title": [
+            {
+              "text": "Indraprastha Institute of Information Technology, Delhi",
+              "type": "text",
+            },
+          ],
+        },
+      ],
+      "title": "Education",
+    },
+    {
+      "blocks": [
+        {
+          "bullets": [
+            [
+              {
+                "text": "Designed and architected ground-up from scratch; handled 200,000+ requests and 15,000 users, including mitigating a DDoS attack, during the 36-hour event.",
+                "type": "text",
+              },
+            ],
+          ],
+          "description": [
+            {
+              "text": "Online “Cryptic Hunt” Platform — Node.js, Svelte, Sapper",
+              "type": "text",
+            },
+          ],
+          "kind": "project",
+          "name": [
+            {
+              "text": "Slash",
+              "type": "text",
+            },
+          ],
+        },
+        {
+          "bullets": [],
+          "description": [
+            {
+              "text": "Browser extension adding 30+ features to Hacker News — 2,000+ users, 600+ GitHub stars",
+              "type": "text",
+            },
+          ],
+          "kind": "project",
+          "name": [
+            {
+              "text": "Refined Hacker News",
+              "type": "text",
+            },
+          ],
+        },
+        {
+          "bullets": [],
+          "description": [
+            {
+              "text": "Browser extension for Markdown notes on New Tab — 3,000+ users, 750+ GitHub stars",
+              "type": "text",
+            },
+          ],
+          "kind": "project",
+          "name": [
+            {
+              "text": "Markdown New Tab",
+              "type": "text",
+            },
+          ],
+        },
+      ],
+      "title": "Projects",
+    },
+    {
+      "blocks": [
+        {
+          "detail": [
+            {
+              "text": "InOut 6, India’s largest community-organized hackathon",
+              "type": "text",
+            },
+          ],
+          "kind": "achievement",
+          "title": [
+            {
+              "text": "Grand Prize Winner",
+              "type": "text",
+            },
+          ],
+        },
+        {
+          "detail": [
+            {
+              "text": "Academic Excellence, 2021 and 2022",
+              "type": "text",
+            },
+          ],
+          "kind": "achievement",
+          "title": [
+            {
+              "text": "Dean’s List Award",
+              "type": "text",
+            },
+          ],
+        },
+        {
+          "detail": [
+            {
+              "text": "Combined across 5 open-source projects",
+              "type": "text",
+            },
+          ],
+          "kind": "achievement",
+          "title": [
+            {
+              "text": "3,500+ GitHub Stars",
+              "type": "text",
+            },
+          ],
+        },
+        {
+          "detail": [
+            {
+              "text": "Highlighted on GitHub’s official Twitter and Facebook pages",
+              "type": "text",
+            },
+          ],
+          "kind": "achievement",
+          "title": [
+            {
+              "text": "2048.cpp Featured by GitHub",
+              "type": "text",
+            },
+          ],
+        },
+      ],
+      "title": "Achievements",
+    },
+    {
+      "blocks": [
+        {
+          "items": [
+            {
+              "text": "TypeScript, React, Node.js",
+              "type": "text",
+            },
+          ],
+          "kind": "skill",
+          "label": [
+            {
+              "text": "Core",
+              "type": "text",
+            },
+          ],
+        },
+        {
+          "items": [
+            {
+              "text": "Redux, Zustand, Three.js, Firestore, Svelte(Kit), Next.js, NestJS, Python, AWS, GCP, Docker",
+              "type": "text",
+            },
+          ],
+          "kind": "skill",
+          "label": [
+            {
+              "text": "Also shipped with",
+              "type": "text",
+            },
+          ],
+        },
+        {
+          "items": [
+            {
+              "text": "Claude Code, Devin, Codex — run in parallel, with written agent skills and test harnesses as guardrails",
+              "type": "text",
+            },
+          ],
+          "kind": "skill",
+          "label": [
+            {
+              "text": "Coding agents",
+              "type": "text",
+            },
+          ],
+        },
+      ],
+      "title": "Skills",
+    },
+  ],
+  "summary": [
+    {
+      "text": "Full-stack engineer with almost 4 years at Flux, a browser-based circuit-board design tool, working in TypeScript and React across the editor, its data model, and its AI features. Led the product’s flagship AI feature and a rewrite of its core data model, including the migration of 265K live projects. Works with coding agents daily.",
+      "type": "text",
+    },
+  ],
+}
+`;
