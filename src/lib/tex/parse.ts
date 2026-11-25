@@ -429,7 +429,6 @@ export function parseResume(src: string): Resume {
   };
   parseBlocks(body(tokenize(src)), state);
   if (!state.name) throw new TexError("missing \\resumeHeader", 1);
-  if (!state.summary) throw new TexError("missing \\resumeSummary", 1);
   return {
     name: state.name,
     contacts: state.contacts,

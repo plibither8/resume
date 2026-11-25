@@ -51,6 +51,7 @@ export interface Section {
 export interface Resume {
   name: string;
   contacts: Contact[];
-  summary: Inline[];
+  /** null when the tex has no \resumeSummary. */
+  summary: Inline[] | null;
   sections: Section[];
 }

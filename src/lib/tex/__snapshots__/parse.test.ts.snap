@@ -556,11 +556,6 @@ exports[`resume/resume.tex > parses 1`] = `
       "title": "Skills",
     },
   ],
-  "summary": [
-    {
-      "text": "Full-stack engineer with almost 4 years at Flux, a browser-based circuit-board design tool, working in TypeScript and React across the editor, its data model, and its AI features. Led the product’s flagship AI feature and a rewrite of its core data model, including the migration of 265K live projects. Works with coding agents daily.",
-      "type": "text",
-    },
-  ],
+  "summary": null,
 }
 `;

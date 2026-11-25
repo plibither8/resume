@@ -109,7 +109,7 @@
 \newif\iffirstinlist
 \newcommand{\listsep}[1]{\iffirstinlist\global\firstinlistfalse\else\unskip#1\fi}
 
-% \resumeSummary{text}: must come before \resumeHeader.
+% \resumeSummary{text}: optional; if used, it must come before \resumeHeader.
 \newcommand{\resumeSummary}[1]{\gdef\summarytext{#1}}
 
 % \resumeContact{label}{url}: only inside \resumeHeader. An empty url prints plain text.
@@ -118,18 +118,20 @@
   \if\relax\detokenize{#2}\relax #1\else\href{#2}{\underline{#1}}\fi
 }
 
-% \resumeHeader{name}{contacts}: the name, the contact line and the summary.
+% \resumeHeader{name}{contacts}: the name, the contact line and, if set, the summary.
 \newcommand{\resumeHeader}[2]{%
   \begin{center}
     \textbf{\Huge \scshape #1} \\ \ifdefined\onepage\vspace{2pt}\else\vspace{1pt}\fi
     \small \global\firstinlisttrue #2
-    \ifdefined\onepage \\ \vspace{2pt} \small \summarytext \fi
+    \ifdefined\onepage\ifdefined\summarytext \\ \vspace{2pt} \small \summarytext \fi\fi
   \end{center}
-  \ifdefined\onepage
-    \vspace{-14pt}
-  \else
-    \section{Professional Summary}
-      \summarytext\par
+  \ifdefined\summarytext
+    \ifdefined\onepage
+      \vspace{-14pt}
+    \else
+      \section{Professional Summary}
+        \summarytext\par
+    \fi
   \fi
 }
 
@@ -167,8 +169,6 @@
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
-
-\resumeSummary{Full-stack engineer with almost 4 years at Flux, a browser-based circuit-board design tool, working in TypeScript and React across the editor, its data model, and its AI features. Led the product's flagship AI feature and a rewrite of its core data model, including the migration of 265K live projects. Works with coding agents daily.}
 
 \resumeHeader{Mihir Chaturvedi}{
   \resumeContact{plibither8@gmail.com}{mailto:plibither8@gmail.com}

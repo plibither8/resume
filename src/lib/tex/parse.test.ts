@@ -135,6 +135,14 @@ describe("structure", () => {
     );
   });
 
+  it("treats \\resumeSummary as optional", () => {
+    const r = parseResume(doc("\\resumeHeader{A}{\\resumeContact{a}{b}}"));
+    expect(r.summary).toBeNull();
+    expect(parseResume(minimal("")).summary).toEqual([
+      { type: "text", text: "Hi." },
+    ]);
+  });
+
   it("treats an empty contact url as plain text", () => {
     const r = parseResume(
       doc("\\resumeSummary{x}\\resumeHeader{A}{\\resumeContact{plain}{}}")

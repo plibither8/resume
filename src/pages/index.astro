@@ -28,7 +28,15 @@ function lastUpdated(): string {
   return format(new Date());
 }
 
-const description = plainText(resume.summary);
+// The page description: the summary if the tex has one, else the latest role.
+const latest = resume.sections
+  .flatMap((s) => s.blocks)
+  .find((b) => b.kind === "entry");
+const description = resume.summary
+  ? plainText(resume.summary)
+  : latest
+    ? `${resume.name}: ${plainText(latest.title)} at ${plainText(latest.subtitle)}. Resume with full and 1-page PDFs.`
+    : `${resume.name}'s resume.`;
 const title = `${resume.name} · Resume`;
 ---
 
@@ -84,9 +92,15 @@ const title = `${resume.name} · Resume`;
     >
       <Header resume={resume} />
 
-      <Section title="Professional Summary">
-        <p class="-ml-[0.15in]"><Inline nodes={resume.summary} /></p>
-      </Section>
+      {
+        resume.summary && (
+          <Section title="Professional Summary">
+            <p class="-ml-[0.15in]">
+              <Inline nodes={resume.summary} />
+            </p>
+          </Section>
+        )
+      }
 
       {
         resume.sections.map((section) => (
