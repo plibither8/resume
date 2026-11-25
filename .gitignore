@@ -6,3 +6,9 @@ node_modules
 .env
 .env.*
 !.env.example
+
+# LaTeX build outputs
+resume/*.pdf
+resume/*.aux
+resume/*.log
+resume/*.xdv

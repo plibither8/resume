@@ -1,0 +1,296 @@
+%-------------------------
+% Resume in LaTeX
+% Based on: https://github.com/jakegut/resume
+% License: MIT
+%
+% This file is the only source of resume content. It builds:
+%   * resume.pdf        (full, this file)
+%   * resume-1page.pdf  (resume-1page.tex defines \onepage and inputs this file)
+%   * resume.mihir.ch   (src/lib/tex parses everything after \begin{document})
+%
+% Rules for the body (the site's parser enforces them and fails the build otherwise):
+%   * Content goes through the macros defined under "Content macros" below.
+%   * \variant{full}{short} picks text per PDF; the site always shows the full text.
+%   * \fullonly{...} appears only in the full PDF (and on the site).
+%   * Inline formatting: \textbf, \emph, \textit, \href, \underline, \%, \$, \&.
+%   * Layout tweaks belong in the preamble, not the body.
+%------------------------
+
+\ifdefined\onepage
+  \documentclass[letterpaper,10pt]{article}
+\else
+  \documentclass[letterpaper,11pt]{article}
+\fi
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+%----------FONT OPTIONS----------
+\usepackage{fontspec}
+\setmainfont{lmroman10-regular.otf}[
+  BoldFont = lmroman10-bold.otf,
+  ItalicFont = lmroman10-italic.otf,
+  BoldItalicFont = lmroman10-bolditalic.otf
+]
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-0.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% XeTeX natively produces Unicode-compliant PDFs
+
+%-------------------------
+% Layout commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------
+% Content macros (the parser knows exactly these)
+
+% \variant{full text}{1-page text}
+\newcommand{\variant}[2]{\ifdefined\onepage#2\else#1\fi}
+% \fullonly{only in the full PDF}
+\newcommand{\fullonly}[1]{\ifdefined\onepage\else#1\fi}
+
+% A separator printed between items of a list, never before the first one.
+\newif\iffirstinlist
+\newcommand{\listsep}[1]{\iffirstinlist\global\firstinlistfalse\else\unskip#1\fi}
+
+% \resumeSummary{text}: must come before \resumeHeader.
+\newcommand{\resumeSummary}[1]{\gdef\summarytext{#1}}
+
+% \resumeContact{label}{url}: only inside \resumeHeader. An empty url prints plain text.
+\newcommand{\resumeContact}[2]{%
+  \listsep{\space$|$\space}%
+  \if\relax\detokenize{#2}\relax #1\else\href{#2}{\underline{#1}}\fi
+}
+
+% \resumeHeader{name}{contacts}: the name, the contact line and the summary.
+\newcommand{\resumeHeader}[2]{%
+  \begin{center}
+    \textbf{\Huge \scshape #1} \\ \ifdefined\onepage\vspace{2pt}\else\vspace{1pt}\fi
+    \small \global\firstinlisttrue #2
+    \ifdefined\onepage \\ \vspace{2pt} \small \summarytext \fi
+  \end{center}
+  \ifdefined\onepage
+    \vspace{-14pt}
+  \else
+    \section{Professional Summary}
+      \summarytext\par
+  \fi
+}
+
+% \resumeProject{name}{description}, optionally followed by an item list.
+\newcommand{\resumeProject}[2]{\resumeProjectHeading{\textbf{#1} $|$ \emph{#2}}{}}
+
+% \resumeAchievements{ \resumeAchievement{title}{detail} ... }
+\newcommand{\resumeAchievements}[1]{%
+  \ifdefined\onepage
+    \begin{itemize}[leftmargin=0.15in, label={}]
+      \small{\item{\global\firstinlisttrue #1}}
+    \end{itemize}
+    \vspace{-12pt}%
+  \else
+    \resumeSubHeadingListStart #1 \resumeSubHeadingListEnd%
+  \fi
+}
+\newcommand{\resumeAchievement}[2]{%
+  \ifdefined\onepage
+    \listsep{\space$|$\space}\textbf{#1}{, #2}%
+  \else
+    \resumeProjectHeading{\textbf{#1} $|$ \emph{#2}}{}%
+  \fi
+}
+
+% \resumeSkills{ \resumeSkill{label}{items} ... }
+\newcommand{\resumeSkills}[1]{%
+  \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{\global\firstinlisttrue #1}}
+  \end{itemize}
+}
+\newcommand{\resumeSkill}[2]{\listsep{\\}\textbf{#1}{: #2}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\resumeSummary{Full-stack engineer with 3+ years at Flux, a browser-based circuit-board design tool, working in TypeScript and React across the editor, its data model, and its AI features. Led the product's flagship AI feature and a rewrite of its core data model, including the migration of 265K live projects. Works with coding agents daily.}
+
+\resumeHeader{Mihir Chaturvedi}{
+  \resumeContact{+91\,882\,646\,9142}{}
+  \resumeContact{plibither8@gmail.com}{mailto:plibither8@gmail.com}
+  \resumeContact{mihir.ch}{https://mihir.ch}
+}
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Software Engineer -- Fullstack}{July 2023 -- November 2026}
+      {Flux}{Remote -- New Delhi}
+      \resumeItemListStart
+        \resumeItem{Architected and led a ground-up rewrite of the core connectivity data model of Flux's circuit-board design app (300+ PRs), replacing 4 out-of-sync data stores with one source of truth for all editors and the AI agent.}
+        \resumeItem{Built a reusable data-migration platform (backups, dry-run verification, automated failure triage, one-click rollback) that upgraded 265K live projects of 64K users in place with 99.999\% success.}
+        \resumeItem{Led full-stack engineering of Flux's flagship AI feature for automatic circuit-board layout, integrating external AI vendors; used 76K times by 30K users, who account for 47\% of revenue, driving 3x user growth and \$1M+ ARR.}
+        \resumeItem{Reverse-engineered the undocumented file format of the industry-leading circuit design tool to build Flux's first design importer, letting 675+ professional users move 878 existing projects into Flux.}
+        \resumeItem{Built a one-click tool for connecting circuit-board layers (Smart Vias), cutting a multi-hour manual step down to seconds and reaching feature parity with top competitors.}
+        \resumeItem{Shipped 490+ production PRs in 2026 (159 in June) by running AI agents (Devin, Claude Code) in parallel.}
+        \resumeItem{Redesigned how users connect components in the circuit editor, with a context menu at each pin, automatic labels, and automatic wiring; used 78K times by 1.7K users in 5 months.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Frontend Intern}{January 2023 -- July 2023}
+      {Flux}{Remote -- New Delhi}
+      \resumeItemListStart
+        \resumeItem{Led development of an in-context editor for circuit-board design rules, cutting rule editing time by 80\% and reaching near-universal adoption with 750K+ edits by 12K+ users.}
+        \resumeItem{Shipped 20+ improvements and bug fixes across the webapp, improving stability and user experience.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Engineering Intern -- Frontend Platform}{May 2022 -- August 2022}
+      {Sourcegraph}{Remote -- New Delhi}
+      \resumeItemListStart
+        \variant{
+          \resumeItem{Proposed an RFC for a unified logger service to enhance client-side logging for Sourcegraph's consumer applications.}
+          \resumeItem{Enhanced observability and monitoring of webapp through optimized Sentry integrations.}
+          \resumeItem{Streamlined Repository Contributors page by replacing RxJS dependencies with direct Apollo Client calls to GraphQL API, boosting maintainability and speed.}
+          \resumeItem{Implemented over 5 accessibility improvements across webapp and core components for enhanced usability by all platform consumers.}
+        }{
+          \resumeItem{Proposed an RFC for a unified client-side logger service; improved webapp observability through Sentry integrations.}
+          \resumeItem{Replaced RxJS with direct Apollo Client calls on the Repository Contributors page; shipped 5+ accessibility improvements.}
+        }
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {JavaScript Engineer Intern}{March 2021 -- April 2022}
+      {Pabio (YC S21)}{Remote -- New Delhi}
+      \resumeItemListStart
+        \variant{
+          \resumeItem{Developed and maintained user-facing website and internal platform using NextJS and TypeScript, and implemented new functionalities by creating NestJS API endpoints.}
+          \resumeItem{Established a monorepo using Rush, enabling seamless integration of packages and automatic documentation generation.}
+          \resumeItem{Built and managed CI pipelines, and played a role in architecting and managing services on AWS and GCP.}
+        }{
+          \resumeItem{Built the user-facing website and internal platform with NextJS, TypeScript and NestJS; ran CI pipelines and services on AWS and GCP.}
+        }
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Frontend Engineer Intern}{December 2020 -- March 2021}
+      {Devfolio}{Remote -- New Delhi}
+      \resumeItemListStart
+        \variant{
+          \resumeItem{Developed 50+ unit tests using Jest and React Testing Library to thoroughly validate user flows and components.}
+          \resumeItem{Enhanced the internal design library by crafting reusable React components for improved development efficiency.}
+          \resumeItem{Resolved bugs across various key sections, including the main Devfolio platform, as well as the landing, submissions, projects, and profile pages.}
+        }{
+          \resumeItem{Wrote 50+ unit tests with Jest and React Testing Library; built reusable React components for the internal design library.}
+        }
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Freelance Web Developer}{June 2019 -- March 2021}
+      {Self-Employed}{Remote -- New Delhi}
+      \resumeItemListStart
+        \variant{
+          \resumeItem{Worked remotely with 5+ international clients to build websites, browser extensions, and webapps.}
+          \resumeItem{Integrated the ``Markdown New Tab'' browser extension into the Orion Browser, used by 1,000+ users.}
+        }{
+          \resumeItem{Built websites, browser extensions and webapps for 5+ international clients, including integrating Markdown New Tab into the Orion Browser (1,000+ users).}
+        }
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Indraprastha Institute of Information Technology, Delhi}{July 2019 -- June 2023}
+      {Bachelor of Technology --- Computer Science and Engineering}{GPA: 8.8/10}
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+  \resumeSubHeadingListStart
+    \resumeProject{Slash}{Online ``Cryptic Hunt'' Platform --- Node.js, Svelte, Sapper}
+      \resumeItemListStart
+        \resumeItem{\variant{Designed and architected ground-up from scratch; handled 200,000+ requests and 15,000 users, including mitigating a DDoS attack, during the 36-hour event.}{Designed and built from scratch; handled 200,000+ requests and 15,000 users, including mitigating a DDoS attack.}}
+      \resumeItemListEnd
+    \resumeProject{Refined Hacker News}{Browser extension adding 30+ features to Hacker News --- 2,000+ users, 600+ GitHub stars}
+    \resumeProject{Markdown New Tab}{Browser extension for Markdown notes on New Tab --- 3,000+ users, 750+ GitHub stars}
+  \resumeSubHeadingListEnd
+
+%-----------ACHIEVEMENTS-----------
+\section{Achievements}
+  \resumeAchievements{
+    \resumeAchievement{Grand Prize Winner}{\variant{InOut 6, India's largest community-organized hackathon}{InOut 6 --- India's largest community-organized hackathon}}
+    \resumeAchievement{\variant{Dean's List Award}{Dean's List}}{\variant{Academic Excellence, 2021 and 2022}{2021 \& 2022}}
+    \resumeAchievement{\variant{3,500+ GitHub Stars}{3,500+ GitHub Stars}}{\variant{Combined across 5 open-source projects}{across 5 projects}}
+    \fullonly{\resumeAchievement{2048.cpp Featured by GitHub}{Highlighted on GitHub's official Twitter and Facebook pages}}
+  }
+
+%-----------SKILLS-----------
+\section{Skills}
+  \resumeSkills{
+    \resumeSkill{Core}{TypeScript, React, Node.js}
+    \resumeSkill{Also shipped with}{Redux, Zustand, Three.js, Firestore, Svelte(Kit), Next.js, NestJS, Python, AWS, GCP, Docker}
+    \resumeSkill{Coding agents}{Claude Code, Devin, Codex --- run in parallel, with written agent skills and test harnesses as guardrails}
+  }
+
+%-------------------------------------------
+\end{document}
