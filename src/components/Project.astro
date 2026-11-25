@@ -10,13 +10,12 @@ interface Props {
 const { project } = Astro.props;
 ---
 
+<!-- Mirrors \resumeProject: \small, bold name | italic description. -->
 <article class="break-inside-avoid">
-  <h3 class="text-slate-800">
-    <span class="font-semibold"><Inline nodes={project.name} /></span>
-    <span class="mx-1 text-slate-300" aria-hidden="true">|</span>
-    <span class="text-sm text-slate-500 italic"
-      ><Inline nodes={project.description} /></span
-    >
+  <h3 class="tex-small">
+    <strong><Inline nodes={project.name} /></strong>{" "}
+    <span aria-hidden="true">|</span>{" "}
+    <em><Inline nodes={project.description} /></em>
   </h3>
   <Bullets bullets={project.bullets} />
 </article>

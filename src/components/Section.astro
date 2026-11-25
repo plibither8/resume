@@ -6,11 +6,10 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<section class="space-y-3 break-inside-avoid-page">
-  <h2
-    class="flex items-center gap-3 text-xs font-bold tracking-widest text-slate-500 uppercase after:h-px after:flex-1 after:bg-slate-200"
-  >
-    {title}
-  </h2>
-  <slot />
+<!-- Mirrors \section: \large bold title over a full-width rule. -->
+<section class="mt-4">
+  <h2 class="tex-large border-b border-black pb-0.5 font-bold">{title}</h2>
+  <div class="mt-1.5 pl-[0.15in]">
+    <slot />
+  </div>
 </section>

@@ -14,7 +14,7 @@ const external = (href: string) => /^https?:/.test(href);
     node.type === "text" ? (
       node.text
     ) : node.type === "bold" ? (
-      <strong class="font-semibold text-slate-800">
+      <strong class="font-bold">
         <Astro.self nodes={node.children} />
       </strong>
     ) : node.type === "italic" ? (

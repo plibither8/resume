@@ -10,24 +10,17 @@ interface Props {
 const { entry } = Astro.props;
 ---
 
+<!-- Mirrors \resumeSubheading: bold title | dates, then italic \small subtitle | meta. -->
 <article class="break-inside-avoid">
-  <header class="space-y-0.5">
-    <div
-      class="flex flex-col gap-x-4 sm:flex-row sm:items-baseline sm:justify-between"
-    >
-      <h3 class="font-semibold text-slate-800">
-        <Inline nodes={entry.title} />
-      </h3>
-      <span class="text-sm text-slate-500 tabular-nums sm:shrink-0">
-        <Inline nodes={entry.dates} />
-      </span>
-    </div>
-    <div
-      class="flex flex-col gap-x-4 text-sm text-slate-500 italic sm:flex-row sm:items-baseline sm:justify-between"
-    >
-      <span><Inline nodes={entry.subtitle} /></span>
-      <span class="sm:shrink-0"><Inline nodes={entry.meta} /></span>
-    </div>
-  </header>
+  <div class="flex flex-wrap items-baseline justify-between gap-x-4">
+    <h3 class="font-bold"><Inline nodes={entry.title} /></h3>
+    <span><Inline nodes={entry.dates} /></span>
+  </div>
+  <div
+    class="tex-small flex flex-wrap items-baseline justify-between gap-x-4 italic"
+  >
+    <span><Inline nodes={entry.subtitle} /></span>
+    <span><Inline nodes={entry.meta} /></span>
+  </div>
   <Bullets bullets={entry.bullets} />
 </article>

@@ -1,17 +1,80 @@
 @import "tailwindcss";
 
+/* Latin Modern Roman: the font resume.tex is set in (see public/fonts/README.txt). */
+@font-face {
+  font-family: "Latin Modern Roman";
+  src: url("/fonts/lmroman10-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Latin Modern Roman";
+  src: url("/fonts/lmroman10-bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Latin Modern Roman";
+  src: url("/fonts/lmroman10-italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Latin Modern Roman";
+  src: url("/fonts/lmroman10-bolditalic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@theme {
+  --font-tex:
+    "Latin Modern Roman", "Computer Modern Serif", "CMU Serif", Georgia, serif;
+}
+
 @layer base {
   body {
-    @apply bg-slate-900 text-slate-700 antialiased;
+    @apply bg-slate-800 antialiased;
+  }
+}
+
+/*
+ * The "paper": sizes follow the 11pt article class (11pt body, \small 10pt,
+ * \large 12pt, \Huge 24.88pt) at 96 px/in, so the page reads like the PDF.
+ */
+@layer components {
+  .paper {
+    @apply font-tex text-black;
+    font-size: 14.67px;
+    line-height: 1.25;
+    font-kerning: normal;
+    font-variant-ligatures: common-ligatures;
   }
 
-  a {
-    @apply underline decoration-slate-300 underline-offset-2 transition-colors hover:decoration-slate-600;
+  .paper a {
+    @apply underline decoration-1 underline-offset-2;
+  }
+  .paper a:hover {
+    @apply decoration-2;
+  }
+
+  .tex-small {
+    font-size: 13.33px;
+  }
+  .tex-large {
+    font-size: 16px;
+  }
+  .tex-huge {
+    font-size: 33.17px;
   }
 }
 
 @media print {
   @page {
+    size: letter;
     margin: 0.5in;
   }
 

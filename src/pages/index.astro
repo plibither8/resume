@@ -44,67 +44,101 @@ const title = `${resume.name} · Resume`;
     <meta property="og:url" content={Astro.site} />
     <link rel="canonical" href={Astro.site} />
     <link rel="icon" href="/logos/mihir.svg" type="image/svg+xml" />
+    <link
+      rel="preload"
+      href="/fonts/lmroman10-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/lmroman10-bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
   </head>
-  <body class="px-3 py-6 sm:px-6 sm:py-10 print:p-0">
-    <main
-      class="mx-auto max-w-[960px] overflow-hidden rounded-xl bg-white shadow-2xl shadow-black/30 print:max-w-none print:rounded-none print:shadow-none"
+  <body class="px-3 py-5 sm:px-6 sm:py-8 print:p-0">
+    <!-- Site chrome: not part of the resume, so it isn't in the tex. -->
+    <nav
+      class="mx-auto mb-3 flex max-w-[8.5in] flex-wrap items-center justify-between gap-2 px-1 font-sans text-xs text-slate-400 print:hidden"
+      aria-label="Resume files"
     >
-      <Header resume={resume} lastUpdated={lastUpdated()} />
+      <span>Last updated {lastUpdated()}</span>
+      <span class="flex gap-3">
+        <a class="hover:text-white" href="/resume.pdf">Download PDF</a>
+        <a class="hover:text-white" href="/resume-1page.pdf">1-page PDF</a>
+        <a
+          class="hover:text-white"
+          href="https://github.com/plibither8/resume"
+          target="_blank"
+          rel="noopener noreferrer">Source</a
+        >
+      </span>
+    </nav>
 
-      <div class="space-y-8 px-6 py-7 sm:px-8">
-        {
-          resume.sections.map((section) => (
-            <Section title={section.title}>
-              {section.blocks.every((b) => b.kind === "skill") ? (
-                <dl class="space-y-1 text-sm leading-relaxed text-slate-600">
-                  {section.blocks.map(
-                    (b) =>
-                      b.kind === "skill" && (
-                        <div>
-                          <dt class="inline font-semibold text-slate-800">
-                            <Inline nodes={b.label} />:
-                          </dt>{" "}
-                          <dd class="inline">
-                            <Inline nodes={b.items} />
-                          </dd>
-                        </div>
-                      )
-                  )}
-                </dl>
-              ) : section.blocks.every((b) => b.kind === "achievement") ? (
-                <ul class="space-y-1.5 text-sm leading-relaxed text-slate-600">
-                  {section.blocks.map(
-                    (b) =>
-                      b.kind === "achievement" && (
-                        <li>
-                          <strong class="font-semibold text-slate-800">
-                            <Inline nodes={b.title} />
-                          </strong>
-                          <span class="mx-1 text-slate-300" aria-hidden="true">
-                            |
-                          </span>
-                          <em class="text-slate-500">
-                            <Inline nodes={b.detail} />
-                          </em>
-                        </li>
-                      )
-                  )}
-                </ul>
-              ) : (
-                <div class="space-y-5">
-                  {section.blocks.map((b) =>
-                    b.kind === "entry" ? (
-                      <Entry entry={b} />
-                    ) : b.kind === "project" ? (
-                      <Project project={b} />
-                    ) : null
-                  )}
-                </div>
-              )}
-            </Section>
-          ))
-        }
-      </div>
+    <!-- The paper: a web rendering of resume.tex in the PDF's typography. -->
+    <main
+      class="paper mx-auto max-w-[8.5in] bg-white px-5 py-7 shadow-2xl shadow-black/40 sm:px-[0.5in] sm:py-[0.5in] print:max-w-none print:p-0 print:shadow-none"
+    >
+      <Header resume={resume} />
+
+      <Section title="Professional Summary">
+        <p class="-ml-[0.15in]"><Inline nodes={resume.summary} /></p>
+      </Section>
+
+      {
+        resume.sections.map((section) => (
+          <Section title={section.title}>
+            {section.blocks.every((b) => b.kind === "skill") ? (
+              <dl class="tex-small">
+                {section.blocks.map(
+                  (b) =>
+                    b.kind === "skill" && (
+                      <div>
+                        <dt class="inline font-bold">
+                          <Inline nodes={b.label} />
+                        </dt>
+                        :{" "}
+                        <dd class="inline">
+                          <Inline nodes={b.items} />
+                        </dd>
+                      </div>
+                    )
+                )}
+              </dl>
+            ) : section.blocks.every((b) => b.kind === "achievement") ? (
+              <ul class="tex-small space-y-1.5">
+                {section.blocks.map(
+                  (b) =>
+                    b.kind === "achievement" && (
+                      <li>
+                        <strong>
+                          <Inline nodes={b.title} />
+                        </strong>{" "}
+                        <span aria-hidden="true">|</span>{" "}
+                        <em>
+                          <Inline nodes={b.detail} />
+                        </em>
+                      </li>
+                    )
+                )}
+              </ul>
+            ) : (
+              <div class="space-y-2">
+                {section.blocks.map((b) =>
+                  b.kind === "entry" ? (
+                    <Entry entry={b} />
+                  ) : b.kind === "project" ? (
+                    <Project project={b} />
+                  ) : null
+                )}
+              </div>
+            )}
+          </Section>
+        ))
+      }
     </main>
   </body>
 </html>

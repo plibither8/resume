@@ -9,11 +9,11 @@ interface Props {
 const { bullets } = Astro.props;
 ---
 
-{
+<!-- Mirrors \resumeItem inside \resumeItemListStart: \small items with round bullets. -->{
   bullets.length > 0 && (
-    <ul class="mt-2 list-[circle] space-y-1 pl-5 text-sm leading-relaxed text-slate-600 marker:text-slate-400">
+    <ul class="tex-small mt-1 list-disc space-y-0.5 pl-[2.2em]">
       {bullets.map((bullet) => (
-        <li class="pl-1">
+        <li class="pl-0.5">
           <Inline nodes={bullet} />
         </li>
       ))}
